@@ -1,0 +1,7 @@
+D:\Programozás\Extra projektek\Catcher\Catcher\bin\Debug\Catcher.exe.config
+D:\Programozás\Extra projektek\Catcher\Catcher\bin\Debug\Catcher.exe
+D:\Programozás\Extra projektek\Catcher\Catcher\bin\Debug\Catcher.pdb
+D:\Programozás\Extra projektek\Catcher\Catcher\obj\Debug\Catcher.csprojAssemblyReference.cache
+D:\Programozás\Extra projektek\Catcher\Catcher\obj\Debug\Catcher.csproj.CoreCompileInputs.cache
+D:\Programozás\Extra projektek\Catcher\Catcher\obj\Debug\Catcher.exe
+D:\Programozás\Extra projektek\Catcher\Catcher\obj\Debug\Catcher.pdb
