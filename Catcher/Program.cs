@@ -75,6 +75,8 @@ namespace Catcher
                 }
                 else
                 {
+                    Console.WriteLine();
+                    Console.WriteLine("Not valid difficulty setting");
                     IsValid = false;
                 }
             }
