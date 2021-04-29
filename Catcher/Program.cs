@@ -32,7 +32,8 @@ namespace Catcher
             Console.WriteLine("Escape the chaser! ");
             Console.WriteLine("Your character is X");
             Console.WriteLine("Enemy character is ¤");
-            Console.Write("Choose you difficulty with number (1-5 nad 5 is the hardest): ");
+            Console.WriteLine("Use W,A,S,D to move your character");
+            Console.Write("Choose you difficulty with number (1 is the easiest, 6 is the hardest): ");
             bool IsValid = false;
             while (!IsValid)
             {
@@ -62,6 +63,12 @@ namespace Catcher
                 }
                 else if (diff == '5')
                 {
+                    difficulty = 150;
+                    IsValid = true;
+
+                }
+                else if (diff == '6')
+                {
                     difficulty = 100;
                     IsValid = true;
 
@@ -73,6 +80,7 @@ namespace Catcher
             }
             Console.WriteLine();
             Console.Write("Game starting in ");
+            Console.WriteLine();
             for(int i = 3; i > 0; i--)
             {
                 Thread.Sleep(900);
@@ -116,6 +124,7 @@ namespace Catcher
                 }
                 else
                 {
+                    Console.WriteLine();
                     Console.WriteLine("Invalid character");
                 }
             }

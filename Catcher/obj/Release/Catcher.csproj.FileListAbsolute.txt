@@ -1,0 +1,6 @@
+D:\Programozás\Extra projektek\Catcher\Catcher\bin\Release\Catcher.exe.config
+D:\Programozás\Extra projektek\Catcher\Catcher\bin\Release\Catcher.exe
+D:\Programozás\Extra projektek\Catcher\Catcher\bin\Release\Catcher.pdb
+D:\Programozás\Extra projektek\Catcher\Catcher\obj\Release\Catcher.csproj.CoreCompileInputs.cache
+D:\Programozás\Extra projektek\Catcher\Catcher\obj\Release\Catcher.exe
+D:\Programozás\Extra projektek\Catcher\Catcher\obj\Release\Catcher.pdb
