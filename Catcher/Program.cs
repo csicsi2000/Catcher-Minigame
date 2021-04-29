@@ -90,6 +90,10 @@ namespace Catcher
             var backgroundThread = new Thread(background);
             backgroundThread.Start();
 
+            var boardT = new ThreadStart(board);
+            var boardLoop = new Thread(boardT);
+            boardLoop.Start();
+
             while (!gameEnd)
             {
                 char key =Console.ReadKey().KeyChar;
@@ -99,10 +103,10 @@ namespace Catcher
                 {
                     Console.WriteLine("Invalid movement");
                 }                
-                
-                board();
             }
             backgroundThread.Abort();
+            boardLoop.Abort();
+
             Console.WriteLine();
             Console.WriteLine("He catched you!");
             Console.WriteLine("Your score is: " + score);
@@ -183,42 +187,44 @@ namespace Catcher
 
         public static void board()
         {
-            Console.WriteLine();
-            Console.WriteLine();
-            for (int i = 0; i < 10; i++)
+            while (!gameEnd)
             {
-                for (int j = 0; j < 10; j++)
-                {
-                    if (i == yPosition && j == xPosition)
-                    {
-                        Console.Write("X ");
-                    }
-                    else if(i == chaserY && j == chaserX )
-                    {
-                        Console.Write("¤ ");
-                    }
-                    else
-                    {
-                        Console.Write(". ");
-                    }
-                }
+                Thread.Sleep(difficulty);
                 Console.WriteLine();
+                Console.WriteLine();
+                for (int i = 0; i < 10; i++)
+                {
+                    for (int j = 0; j < 10; j++)
+                    {
+                        if (i == yPosition && j == xPosition)
+                        {
+                            Console.Write("X ");
+                        }
+                        else if (i == chaserY && j == chaserX)
+                        {
+                            Console.Write("¤ ");
+                        }
+                        else
+                        {
+                            Console.Write(". ");
+                        }
+                    }
+                    Console.WriteLine();
+                }
             }
         }
 
         public static void loopMove()
         {
-            bool looping = true;
-            while (looping)
+            while (!gameEnd)
             {
                 if (chaserX == xPosition && chaserY == yPosition)
                 {
                     gameEnd = true;
-                    looping = false;
                 }
                 Thread.Sleep(difficulty);
                 chase();
-                board();
+
                 score++;
             }
         }     
