@@ -194,25 +194,27 @@ namespace Catcher
                 Thread.Sleep(difficulty);
                 Console.WriteLine();
                 Console.WriteLine();
+                StringBuilder printBoard = new StringBuilder();
                 for (int i = 0; i < 10; i++)
                 {
                     for (int j = 0; j < 10; j++)
                     {
                         if (i == yPosition && j == xPosition)
                         {
-                            Console.Write("X ");
+                            printBoard.Append("X ");
                         }
                         else if (i == chaserY && j == chaserX)
                         {
-                            Console.Write("¤ ");
+                            printBoard.Append("¤ ");
                         }
                         else
                         {
-                            Console.Write(". ");
+                            printBoard.Append(". ");
                         }
                     }
-                    Console.WriteLine();
+                    printBoard.Append("\n");
                 }
+                Console.WriteLine(printBoard);
             }
         }
 
