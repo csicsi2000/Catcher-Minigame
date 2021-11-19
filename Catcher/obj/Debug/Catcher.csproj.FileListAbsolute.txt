@@ -5,3 +5,10 @@ D:\Programozás\Extra projektek\Catcher\Catcher\obj\Debug\Catcher.csprojAssembly
 D:\Programozás\Extra projektek\Catcher\Catcher\obj\Debug\Catcher.csproj.CoreCompileInputs.cache
 D:\Programozás\Extra projektek\Catcher\Catcher\obj\Debug\Catcher.exe
 D:\Programozás\Extra projektek\Catcher\Catcher\obj\Debug\Catcher.pdb
+D:\Programozás\ExtraProjektek\Catcher\Catcher\bin\Debug\Catcher.exe.config
+D:\Programozás\ExtraProjektek\Catcher\Catcher\bin\Debug\Catcher.exe
+D:\Programozás\ExtraProjektek\Catcher\Catcher\bin\Debug\Catcher.pdb
+D:\Programozás\ExtraProjektek\Catcher\Catcher\obj\Debug\Catcher.csprojAssemblyReference.cache
+D:\Programozás\ExtraProjektek\Catcher\Catcher\obj\Debug\Catcher.csproj.CoreCompileInputs.cache
+D:\Programozás\ExtraProjektek\Catcher\Catcher\obj\Debug\Catcher.exe
+D:\Programozás\ExtraProjektek\Catcher\Catcher\obj\Debug\Catcher.pdb

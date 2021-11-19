@@ -9,16 +9,16 @@ namespace Catcher
 {
     class Program
     {
-        public static int yPosition ;
-        public static int xPosition ;
+        static int yPosition ;
+        static int xPosition ;
 
-        public static int chaserY;
-        public static int chaserX;
+        static int chaserY;
+        static int chaserX;
 
-        public static int difficulty;
-        public static int score;
+        static int difficulty;
+        static int score;
 
-        public static bool gameEnd;
+        static bool gameEnd;
         static void Main(string[] args)
         {
         start:
@@ -88,23 +88,23 @@ namespace Catcher
                 Thread.Sleep(900);
                 Console.Write( i +" ");
             }
-            var background = new ThreadStart(loopMove);
+            var background = new ThreadStart(LoopMove);
             var backgroundThread = new Thread(background);
             backgroundThread.Start();
 
-            var boardT = new ThreadStart(board);
+            var boardT = new ThreadStart(Board);
             var boardLoop = new Thread(boardT);
             boardLoop.Start();
 
             while (!gameEnd)
             {
                 char key =Console.ReadKey().KeyChar;
-                bool valid = move(key);
+                bool valid = Move(key);
 
                 if (!valid)
                 {
                     Console.WriteLine("Invalid movement");
-                }                
+                }
             }
             backgroundThread.Abort();
             boardLoop.Abort();
@@ -136,12 +136,12 @@ namespace Catcher
             }
         }
 
-        static bool move (char direction)
+        static bool Move (char direction)
         {
             bool success = false;
             if(direction == 'w' || direction == 'W')
             {
-                if (check(yPosition - 1))
+                if (Check(yPosition - 1))
                 {
                     yPosition = yPosition - 1;
                     success = true;
@@ -149,7 +149,7 @@ namespace Catcher
             }
             if (direction == 's' || direction == 'S')
             {
-                if (check(yPosition + 1))
+                if (Check(yPosition + 1))
                 {
                     yPosition = yPosition + 1;
                     success = true;
@@ -157,7 +157,7 @@ namespace Catcher
             }
             if (direction == 'a' || direction == 'A')
             {
-                if (check(xPosition - 1))
+                if (Check(xPosition - 1))
                 {
                     xPosition = xPosition - 1;
                     success = true;
@@ -165,7 +165,7 @@ namespace Catcher
             }
             if (direction == 'd' || direction == 'D')
             {
-                if (check(xPosition + 1))
+                if (Check(xPosition + 1))
                 {
                     xPosition = xPosition + 1;
                     success = true;
@@ -175,7 +175,7 @@ namespace Catcher
 
             return success;
         }
-        public static bool check(int position)
+        public static bool Check(int position)
         {
             if (position < 0 || position >= 10)
             {
@@ -187,7 +187,7 @@ namespace Catcher
             }
         }
 
-        public static void board()
+        public static void Board()
         {
             while (!gameEnd)
             {
@@ -218,7 +218,7 @@ namespace Catcher
             }
         }
 
-        public static void loopMove()
+        public static void LoopMove()
         {
             while (!gameEnd)
             {
@@ -227,13 +227,13 @@ namespace Catcher
                     gameEnd = true;
                 }
                 Thread.Sleep(difficulty);
-                chase();
+                Chase();
 
                 score++;
             }
         }     
 
-        public static void chase()
+        public static void Chase()
         {
             int xDiff = Math.Abs(chaserX - xPosition);
             int yDiff = Math.Abs(chaserY - yPosition);
